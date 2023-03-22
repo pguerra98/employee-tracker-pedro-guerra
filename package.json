@@ -1,0 +1,28 @@
+{
+  "name": "employee-tracker-pedro-guerra",
+  "version": "1.0.0",
+  "description": "an application to help track data of departments, employees, and roles.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pguerra98/employee-tracker-pedro-guerra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pguerra98/employee-tracker-pedro-guerra/issues"
+  },
+  "homepage": "https://github.com/pguerra98/employee-tracker-pedro-guerra#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0"
+  }
+}
