@@ -2,13 +2,13 @@ const inquirer = require("inquirer");
 
 const mysql = require("mysql");
 
-const anstab = require("console.table");
+const cTable = require("console.table");
 
-const db = require(".");
+const database = require(".");
 
 const connection = mysql.createConnection({
 
-    host: "localhost", port: 3001, user: "root", password: "Blabla!@#123", database: "employee_tracker_db"
+    host: "localhost", port: 3306, user: "root", password: "Bebelation99!@!951753", database: "employee_tracker_db"
 
 });
 
@@ -26,7 +26,7 @@ function searchEmployees() {
 
     let meg = "SELECT * FROM employee";
 
-    connection.meg(meg, function(err, res) {
+    connection.query(meg, function(err, res) {
 
         if (err) throw err;
 
@@ -41,7 +41,7 @@ function searchRoles() {
 
     let meg = "SELECT * FROM role";
 
-    connection.meg(meg, function(err,res) {
+    connection.query(meg, function(err,res) {
 
         if (err) throw err;
 
@@ -55,7 +55,7 @@ function searchDepartment() {
 
     let meg = "SELECT * FROM department";
 
-    connection.meg(meg, function(err,res) {
+    connection.query(meg, function(err,res) {
 
         if (err) throw err;
 
@@ -211,7 +211,7 @@ function addEmployee() {
 
     .then(function(ans) {
         
-        connection.query("INSERT INTO employee (FirstName, rolespec, managerspec) VALUES (?, ?, ?, ?)", 
+        connection.query("INSERT INTO employee (FirstName, LastName, rolespec, managerspec) VALUES (?, ?, ?, ?)", 
 
         [ans.firstname, ans.lastname, ans.employeeroleID, ans.employeemanager], function (err,res) {
 
@@ -225,7 +225,48 @@ function addEmployee() {
     });
 }
 
+function updateEmployee() {
 
+    inquirer.prompt([
+
+        {
+
+            type:"input",
+
+            message:"Please select the employee to update.",
+
+            name:"update"
+
+        },
+
+        {
+
+            type:"input",
+
+            message:"Please select the role to update this employee",
+
+            name:"roleupdated"
+
+        }
+    ])
+
+    .then(function(ans) {
+
+        connection.query('UPDATE employee SET role_id=? WHERE FirstName= ?', [ans.roleupdated, answer.update], 
+
+        function (err,res) {
+
+            if(err) throw err;
+
+            console.table(res);
+
+            mainScreen();
+
+        });
+
+    });
+
+}
 
 function addRole() {
 
@@ -280,5 +321,4 @@ function quit() {
     connection.end();
 
     process.exit();
-
 }
