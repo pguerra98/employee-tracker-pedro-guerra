@@ -15,8 +15,6 @@ This challenged allowed me to improve my JavaScript & SQL skills, as I had to cr
 
 <a href=" ">Walkthrough Video Link</a>
 
-![alt text](assets/weather-screenshot.png)
-
 ## Credits
 
 GA Tech bootcamp resources
