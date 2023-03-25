@@ -13,7 +13,7 @@ N/A
 
 This challenged allowed me to improve my JavaScript & SQL skills, as I had to create a code from scratch. The main conflict I ran into that took me the longest to figure out was that I had to create a database since when I ran the code it stated that my database did not exist.
 
-<a href=" ">Walkthrough Video Link</a>
+<a href="https://drive.google.com/file/d/1ZZ425qqXuRMqzjnADlr50UBhIvkcfHFE/view">Walkthrough Video Link</a>
 
 ## Credits
 
