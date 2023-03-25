@@ -252,7 +252,7 @@ function updateEmployee() {
 
     .then(function(ans) {
 
-        connection.query('UPDATE employee SET role_id=? WHERE FirstName= ?', [ans.roleupdated, answer.update], 
+        connection.query('UPDATE employee SET rolespec=? WHERE FirstName= ?', [ans.roleupdated, ans.update], 
 
         function (err,res) {
 
